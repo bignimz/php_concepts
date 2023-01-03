@@ -10,8 +10,8 @@ function db_connect() {
             $config['database_pass']
         );
         return $pdo;
-    }catch (PDOException $e){
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $e->getMessage();
+    }catch (PDOException $exception) {
+        echo $pdo . "<br>" . $exception->getMessage();
+        exit;
     }
 }
